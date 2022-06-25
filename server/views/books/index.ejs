@@ -1,3 +1,12 @@
+<%/*
+/**
+ * 
+ *  
+    Name: Jose Uribe
+    Student's id: 301236090
+    Date: June 25, 2022
+ */
+ */%> 
 <%- include ('../partials/header.ejs') %>
 
     <!-- MAIN CONTENT -->
@@ -8,7 +17,8 @@
           <!-- ------------------------ -->
           <!-- FIX THE ADD BUTTON BELOW -->
           <!-- ------------------------ -->
-          <a href="" class="btn btn-primary"><i class="fa fa-plus"></i> Add a book</a>
+         <a href="/books/add" class="btn btn-primary">Add Book</a>
+          
           <br>
           <div class="table-responsive">
             <table class="table table-bordered table-striped table-hover">
@@ -18,7 +28,7 @@
                   <th class="text-center">Price</th>
                   <th class="text-center">Author</th>
                   <th class="text-center">Genre</th>
-                  <th class="text-center"></th>
+                  <th class="text-center">Description</th>
                   <th class="text-center"></th>
                 </tr>
                 </thead>
@@ -30,17 +40,26 @@
                   <td class="text-center">$<%= books[count].Price %></td>
                   <td class="text-center"><%= books[count].Author %></td>
                   <td class="text-center"><%= books[count].Genre %></td>
+                  <!-- Field added Description-->
+                  <td class="text-center"><%= books[count].Description %></td>
 
                   <td class="text-center">
+                    
                     <!-- ------------------------ -->
-                    <!-- ADD the EDIT BUTTON HERE -->
+                    <!-- ADD the EDIT BUTTON HERE --> 
                     <!-- ------------------------ -->
+                    
+                    <a href="/books/details/<%= books[count].id %>" class="btn btn-warning">Edit</a>               
                   </td>
 
                   <td class="text-center">
                     <!-- ------------------------ -->
                     <!-- ADD the DELETE BUTTON HERE -->
                     <!-- ------------------------ -->
+                    <a href="/books/delete/<%= books[count].id %>" class="btn btn-danger">Delete</a>
+
+                   
+                    
                   </td>
                 </tr>
                 <% } %>
